@@ -16,6 +16,9 @@ public class HeaderPage extends GeneralPage {
     @FindBy(xpath = "//a[@id='logout2']")
     private WebElementFacade logoutButton;
 
+    @FindBy(xpath = "//a[@id='signin2']")
+    private WebElementFacade signupButton;
+
     public void clickLoginButton() {
         loginButton.click();
     }
@@ -26,6 +29,10 @@ public class HeaderPage extends GeneralPage {
 
     public String getLogoutAttribute(){
         return logoutButton.getText();
+    }
+
+    public void clickSignupButton() {
+        signupButton.click();
     }
 
 }
