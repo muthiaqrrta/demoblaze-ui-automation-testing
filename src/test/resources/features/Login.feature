@@ -14,7 +14,7 @@ Feature: Login Feature
     When user click login button
     Then user should see alert message
 
-  @Negative
+  @Negative @error
   Scenario: user login using blank username and password
     Given user login using username: "blank" and password: "blank"
     When user click login button

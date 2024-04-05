@@ -2,6 +2,7 @@ package org.example.app.pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -42,21 +43,4 @@ public class GeneralPage extends PageObject {
         getDriver().navigate().refresh();
         waitABit(1000);
     }
-
-    public void accept(){
-        getDriver().switchTo().alert().accept();
-    }
-
-    public boolean isAlertMessageVisible() {
-        boolean foundAlert = false;
-        WebDriverWait wait = new WebDriverWait(getDriver(), 0);
-        try {
-            wait.until(ExpectedConditions.alertIsPresent());
-            foundAlert = true;
-        } catch (TimeoutException eTO) {
-            foundAlert = false;
-        }
-        return foundAlert;
-    }
-
 }

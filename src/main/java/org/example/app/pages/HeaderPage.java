@@ -24,10 +24,13 @@ public class HeaderPage extends GeneralPage {
     }
 
     public String getUsernameAttribute(){
+        waitABit(1000);
+        username.waitUntilVisible();
         return username.getText();
     }
 
     public String getLogoutAttribute(){
+        logoutButton.waitUntilVisible();
         return logoutButton.getText();
     }
 

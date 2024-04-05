@@ -81,8 +81,9 @@ public class LoginSteps {
 
     }
 
-    @Then("user should see alert message")
-    public void userShouldSeeAlertMessage() {
-        MatcherAssert.assertThat("alert message is not visible", loginPage.isAlertMessageVisible(), equalTo(true));
+    @Then("user should see {string} message")
+    public void userShouldSeeAlertMessage(String message) {
+        MatcherAssert.assertThat("message is not visible",
+                loginPage.getAlertMessage().toLowerCase(), equalTo(message));
     }
 }

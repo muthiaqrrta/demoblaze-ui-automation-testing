@@ -27,7 +27,6 @@ public class SignupPage extends GeneralPage {
     }
 
     public void submit() {
-        signupButton.click();
-        waitABit(5000);
+        signupButton.waitUntilClickable().click();
     }
 }

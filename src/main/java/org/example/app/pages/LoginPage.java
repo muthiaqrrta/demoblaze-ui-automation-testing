@@ -2,6 +2,11 @@ package org.example.app.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Component;
 
 @Component("org.example.app.pages.LoginPage")
@@ -16,9 +21,6 @@ public class LoginPage extends GeneralPage {
     @FindBy(xpath = "//button[text()='Log in']")
     private WebElementFacade loginButton;
 
-    @FindBy(xpath = "//div[@class='alert alert-danger']")
-    private WebElementFacade alertMessageAttribute;
-
     public void fillUsername(String username) {
         usernameForm.type(username);
     }
@@ -28,8 +30,23 @@ public class LoginPage extends GeneralPage {
     }
 
     public void submit() {
-        loginButton.click();
-        waitABit(5000);
+        loginButton.waitUntilClickable().click();
+    }
+
+    public String getAlertMessage(){
+        // Switch to the alert
+        WebDriverWait wait = new WebDriverWait(getDriver(),10);
+        wait.until(ExpectedConditions.alertIsPresent());
+        Alert alert = getDriver().switchTo().alert();
+
+        // Get and print the alert text
+        String alertText = alert.getText();
+        System.out.println("Alert text: " + alertText);
+
+        // Accept the alert after getting the alert text
+        alert.accept();
+
+        return alertText;
     }
 
 }
