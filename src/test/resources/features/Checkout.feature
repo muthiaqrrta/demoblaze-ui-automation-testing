@@ -28,7 +28,7 @@ Feature: Checkout Feature
     Then user should see order successfull
 
   @Negative
-  Scenario: user order empty product
+  Scenario: user order empty cart
     When user click cart button
     And user click place order button
     And fill name form using "tester"
