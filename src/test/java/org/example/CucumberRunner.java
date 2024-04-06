@@ -9,6 +9,6 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features/",
         plugin = {"json:target/destination/cucumber.json"},
         stepNotifications = true,
-        tags = "@Regression",
+        tags = "@OrderProductFeature",
         glue="org.example")
 public class CucumberRunner {}

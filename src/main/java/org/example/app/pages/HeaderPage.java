@@ -19,6 +19,9 @@ public class HeaderPage extends GeneralPage {
     @FindBy(xpath = "//a[@id='signin2']")
     private WebElementFacade signupButton;
 
+    @FindBy(xpath = "//a[text()='Cart']")
+    private WebElementFacade cartButton;
+
     public void clickLoginButton() {
         loginButton.click();
     }
@@ -40,6 +43,10 @@ public class HeaderPage extends GeneralPage {
 
     public void clickSignupButton() {
         signupButton.click();
+    }
+
+    public void clickCartButton() {
+        cartButton.waitUntilClickable().click();
     }
 
 }
