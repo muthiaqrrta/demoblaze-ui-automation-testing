@@ -1,5 +1,5 @@
-@OrderProductFeature @Regression
-Feature: Checkout Product Feature
+@CheckoutFeature @Regression
+Feature: Checkout Feature
 
   Background: user login using valid username and password
     Given user login using username: "validUsername" and password: "validPassword"
