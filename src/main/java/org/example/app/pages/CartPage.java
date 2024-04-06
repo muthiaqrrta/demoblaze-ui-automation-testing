@@ -37,6 +37,9 @@ public class CartPage extends GeneralPage{
     @FindBy(xpath = "(//h2)[3]")
     private WebElementFacade orderSuccessfull;
 
+    @FindBy(xpath = "//a[text()='Delete']")
+    private WebElementFacade deleteButton;
+
     public String getProductNameAttribute(){
         productName.waitUntilVisible();
         return productName.getText();
@@ -81,5 +84,13 @@ public class CartPage extends GeneralPage{
 
     public boolean isOrderSuccessfull(){
         return orderSuccessfull.isVisible();
+    }
+
+    public void clickDeleteButton(){
+        deleteButton.waitUntilClickable().click();
+    }
+
+    public boolean isProductNameVisible(){
+        return productName.isVisible();
     }
 }
