@@ -27,7 +27,7 @@ Feature: Checkout Product Feature
     And user click purchase button
     Then user should see order successfull
 
-  @Positive1
+  @Positive
   Scenario: user order empty product
     When user click cart button
     And user click place order button
