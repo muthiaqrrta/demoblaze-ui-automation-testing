@@ -7,7 +7,7 @@ Feature: Cart Feature
     Then user should see welcome "username"
 
   @Positive
-  Scenario: user delete a product on cart page
+  Scenario: user delete product on cart page
     When user click first product on home page
     Then user should see product name on product detail page
 
