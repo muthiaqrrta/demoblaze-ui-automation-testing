@@ -5,15 +5,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.example.app.properties.PropertiesReader.properties;
-import static org.hamcrest.Matchers.equalTo;
-
 import org.example.app.pages.HeaderPage;
 import org.example.app.pages.LoginPage;
 import org.example.app.properties.PropertiesReader;
 import org.hamcrest.MatcherAssert;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.example.app.properties.PropertiesReader.properties;
+import static org.hamcrest.Matchers.equalTo;
 
 public class LoginSteps {
 

@@ -4,7 +4,6 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.app.data.UserData;
 import org.example.app.pages.HeaderPage;
 import org.example.app.pages.SignupPage;
 import org.example.app.properties.PropertiesReader;
@@ -20,9 +19,6 @@ public class SignupSteps {
 
     @Autowired
     HeaderPage headerPage;
-
-    @Autowired
-    UserData userData;
 
     @Before
     public void background(){
