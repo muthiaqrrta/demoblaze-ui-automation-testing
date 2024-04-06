@@ -21,21 +21,38 @@ Feature: Checkout Feature
     And fill name form using "tester"
     And fill country using "indonesia"
     And fill city using "surabaya"
-    And fill credit card using "111"
+    And fill credit card using "1234567891234"
     And fill month using "2"
     And fill year using "2024"
     And user click purchase button
     Then user should see order successfull
 
-  @Positive
+  @Negative
   Scenario: user order empty product
     When user click cart button
     And user click place order button
     And fill name form using "tester"
     And fill country using "indonesia"
     And fill city using "surabaya"
-    And fill credit card using "111"
+    And fill credit card using "1234567891234"
     And fill month using "2"
     And fill year using "2024"
+    And user click purchase button
+    Then user should not see order successfull
+
+  @Negative
+  Scenario: user order a product and only fill in their name and credit card on the form
+    When user click first product on home page
+    Then user should see product name on product detail page
+
+    When user click add to cart button
+    Then user should see "product added." message
+
+    When user click cart button
+    Then user should see the added product
+
+    When user click place order button
+    And fill name form using "tester"
+    And fill credit card using "1234567891234"
     And user click purchase button
     Then user should not see order successfull
