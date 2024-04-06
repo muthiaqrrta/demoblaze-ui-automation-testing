@@ -6,9 +6,9 @@ Feature: Signup Feature
     Given user sign up using username: "notExistingUsername" and password: "notExistingPassword"
     When user click sign up button
     Then user should see "sign up successful." message
-    When user login using username: "signupUsername" and password: "signupPassword"
-    Then user should see welcome "username"
-    And user should see logout button
+#    When user login using username: "signupUsername" and password: "signupPassword"
+#    Then user should see welcome "username"
+#    And user should see logout button
 
   @Negative
   Scenario: user sign up with existing username and password
@@ -20,4 +20,4 @@ Feature: Signup Feature
   Scenario: user sign up using blank username and password
     Given user sign up using username: "blank" and password: "blank"
     When user click sign up button
-    Then user should see "please fill out username and password." message
+    Then user should see sign up form

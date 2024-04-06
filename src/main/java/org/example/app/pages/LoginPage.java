@@ -21,6 +21,9 @@ public class LoginPage extends GeneralPage {
     @FindBy(xpath = "//button[text()='Log in']")
     private WebElementFacade loginButton;
 
+    @FindBy(xpath = "(//button[text()='Close'])[3]")
+    private WebElementFacade closeButton;
+
     public void fillUsername(String username) {
         usernameForm.type(username);
     }
@@ -49,4 +52,7 @@ public class LoginPage extends GeneralPage {
         return alertText;
     }
 
+    public void clickCloseButton() {
+        closeButton.waitUntilClickable().click();
+    }
 }

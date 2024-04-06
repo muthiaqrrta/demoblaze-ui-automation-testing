@@ -34,6 +34,10 @@ public class HeaderPage extends GeneralPage {
         return logoutButton.getText();
     }
 
+    public boolean isLogoutAttributeVisible(){
+        return logoutButton.isVisible();
+    }
+
     public void clickSignupButton() {
         signupButton.click();
     }

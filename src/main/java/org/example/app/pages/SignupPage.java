@@ -15,8 +15,8 @@ public class SignupPage extends GeneralPage {
     @FindBy(xpath = "//button[text()='Sign up']")
     private WebElementFacade signupButton;
 
-    @FindBy(xpath = "//div[@class='alert alert-danger']")
-    private WebElementFacade alertMessageAttribute;
+    @FindBy(xpath = "(//div[@class='modal-header'])[2]")
+    private WebElementFacade signupForm;
 
     public void fillUsername(String username) {
         usernameForm.type(username);
@@ -28,5 +28,9 @@ public class SignupPage extends GeneralPage {
 
     public void submit() {
         signupButton.waitUntilClickable().click();
+    }
+
+    public boolean isSignupFormVisible(){
+        return signupForm.isVisible();
     }
 }

@@ -86,4 +86,15 @@ public class LoginSteps {
         MatcherAssert.assertThat("message is not visible",
                 loginPage.getAlertMessage().toLowerCase(), equalTo(message));
     }
+
+    @And("user click close button")
+    public void userClickCloseButton() {
+        loginPage.clickCloseButton();
+    }
+
+    @Then("user should not see logout button")
+    public void userShouldNotSeeLogoutButton() {
+        MatcherAssert.assertThat("logout button is visible",
+                headerPage.isLogoutAttributeVisible(), equalTo(false));
+    }
 }

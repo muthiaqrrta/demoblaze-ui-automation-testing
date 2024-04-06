@@ -68,4 +68,10 @@ public class SignupSteps {
     public void userClickSignUpButton() {
         signupPage.submit();
     }
+
+    @Then("user should see sign up form")
+    public void userShouldSeeSignUpForm() {
+        MatcherAssert.assertThat("signup form is not visible",
+                signupPage.isSignupFormVisible(), equalTo(true));
+    }
 }

@@ -12,10 +12,11 @@ Feature: Login Feature
   Scenario: user login using invalid username and password
     Given user login using username: "invalidUsername" and password: "invalidPassword"
     When user click login button
-    Then user should see alert message
+    Then user should see "wrong password." message
 
-  @Negative @error
+  @Negative
   Scenario: user login using blank username and password
     Given user login using username: "blank" and password: "blank"
     When user click login button
-    Then user should see alert message
+    And user click close button
+    Then user should not see logout button
