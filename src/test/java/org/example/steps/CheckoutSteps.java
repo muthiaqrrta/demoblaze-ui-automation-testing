@@ -107,4 +107,10 @@ public class CheckoutSteps {
     public void fillYearUsing(String year) {
         cartPage.fillYear(year);
     }
+
+    @Then("user should not see order successfull")
+    public void userShouldNotSeeOrderSuccessfull() {
+        MatcherAssert.assertThat("order successfull",
+                cartPage.isOrderSuccessfull(), equalTo(false));
+    }
 }

@@ -26,3 +26,16 @@ Feature: Checkout Product Feature
     And fill year using "2024"
     And user click purchase button
     Then user should see order successfull
+
+  @Positive1
+  Scenario: user order empty product
+    When user click cart button
+    And user click place order button
+    And fill name form using "tester"
+    And fill country using "indonesia"
+    And fill city using "surabaya"
+    And fill credit card using "111"
+    And fill month using "2"
+    And fill year using "2024"
+    And user click purchase button
+    Then user should not see order successfull

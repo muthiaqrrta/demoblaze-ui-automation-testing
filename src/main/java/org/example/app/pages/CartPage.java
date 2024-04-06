@@ -78,4 +78,8 @@ public class CartPage extends GeneralPage{
         orderSuccessfull.waitUntilVisible();
         return orderSuccessfull.getText();
     }
+
+    public boolean isOrderSuccessfull(){
+        return orderSuccessfull.isVisible();
+    }
 }
